@@ -6,9 +6,7 @@
 /*globals ActiveXObject */
 xhrGet("SimpleServlet", function(responseText){
 	// add to document
-	var mytitle = document.getElementById('message');
-	mytitle.innerHTML = parseJson(responseText);
-
+	setMessage('message', responseText);
 }, function(err){
 	console.log(err);
 });
@@ -46,11 +44,20 @@ function xhrGet(url, callback, errback){
 	xhr.send();
 }
 
-function parseJson(str){
+/*function parseJson(str){
 	return window.JSON ? JSON.parse(str) : eval('(' + str + ')');
-}
+}*/
 /*function prettyJson(str){
 	// If browser does not have JSON utilities, just print the raw string value.
 	return window.JSON ? JSON.stringify(JSON.parse(str), null, '  ') : str;
 }*/
+
+function testTextMessage(str){
+	setMessage("messageText", str);
+}
+
+function setMessage(elementId, str){
+	var mytitle = document.getElementById(elementId);
+	mytitle.innerHTML = str;
+}
 

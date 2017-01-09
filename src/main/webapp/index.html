@@ -14,8 +14,21 @@
 			<td>
 				<!-- The "Hello World!" message comes from /SimpleServlet -->
 				<h1 id = "message"></h1>
+				<h1 id = "messageText"></h1>
 				
 				<p class='description'></p> Thanks for creating a <span class="blue">Tomcat Starter Application</span>.
+			</td>
+		</tr>
+		<tr>
+			<td style='width: 30%;'>Text:</td>
+			<td>
+				<input type="text" id="valueText />
+			</td>
+		</tr>
+		<tr>
+			<td style='width: 30%;'>&nbsp;</td>
+			<td>
+				<input type="button" value="submit" id="submit" onclick="testTextMessage(document.getElementById('valueText').value);" />
 			</td>
 		</tr>
 	</table>
